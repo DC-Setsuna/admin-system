@@ -9,6 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 import java.sql.Timestamp;
 import java.util.List;
 
+/**
+ * The interface Msgflow log jpa.
+ */
 @Transactional
 public interface Msgflow_LogJPA extends JpaRepository<Msgflow_LogEntity,String>, JpaSpecificationExecutor {
 

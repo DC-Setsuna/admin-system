@@ -13,6 +13,12 @@ import java.util.List;
  */
 @Transactional
 public interface ServiceJPA extends JpaRepository<ServiceEntity, String> {
+    /**
+     * Find service by condition list.
+     *
+     * @param key the key
+     * @return the list
+     */
     @Query(value = "select * from SERVICE t where t.SERVICE_CODE = ?1 or t.OWNER_ORG = ?1 or t.OWNER = ?1",nativeQuery=true)
     List<ServiceEntity> findServiceByCondition(String key);
 }

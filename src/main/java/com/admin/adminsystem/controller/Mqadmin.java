@@ -15,11 +15,16 @@ import java.security.cert.X509Certificate;
 import java.util.List;
 
 
+/**
+ * The type Mqadmin.
+ */
 @RestController
 public class Mqadmin {
 
+    // Define API constants
     private static final String API = "https://106.38.159.103:20070";
 
+    // Avoid SSL by requesting certificate validation
     private static class TrustAllCerts implements X509TrustManager {
         @Override
         public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {}
@@ -50,8 +55,14 @@ public class Mqadmin {
         return ssfFactory;
     }
 
+    /**
+     * Gets token.
+     *
+     * Functions that are executed at the beginning of each API interface to get Tocken
+     *
+     * @return the token
+     */
     public static String getToken() {
-
 
         OkHttpClient client = new OkHttpClient().newBuilder().sslSocketFactory(createSSLSocketFactory()).hostnameVerifier(new TrustAllHostnameVerifier())
                 .build();
@@ -81,7 +92,12 @@ public class Mqadmin {
         return token;
     }
 
-    @RequestMapping(value = "/api/mqadmin/qmgr", method = RequestMethod.GET)
+    /**
+     * Gets qmgr.
+     *
+     * @return the qmgr
+     */
+    @RequestMapping(value = "/api/Mqadmin/qmgr", method = RequestMethod.GET)
     public JSONObject get_qmgr () {//
 
         JSONObject list=new JSONObject();
@@ -116,7 +132,12 @@ public class Mqadmin {
         return list;
     }
 
-    @RequestMapping(value = "/api/mqadmin/qmgr/listener", method = RequestMethod.GET)
+    /**
+     * Gets listener.
+     *
+     * @return the listener
+     */
+    @RequestMapping(value = "/api/Mqadmin/qmgr/listener", method = RequestMethod.GET)
     public JSONObject get_listener () {//
 
         JSONObject list=new JSONObject();
@@ -151,7 +172,12 @@ public class Mqadmin {
         return list;
     }
 
-    @RequestMapping(value = "/api/mqadmin/qmgr/channel", method = RequestMethod.GET)
+    /**
+     * Gets channel.
+     *
+     * @return the channel
+     */
+    @RequestMapping(value = "/api/Mqadmin/qmgr/channel", method = RequestMethod.GET)
     public JSONObject get_channel () {//
 
         JSONObject list=new JSONObject();
@@ -186,7 +212,12 @@ public class Mqadmin {
         return list;
     }
 
-    @RequestMapping(value = "/api/mqadmin/qmgr/queue", method = RequestMethod.GET)
+    /**
+     * Gets queue.
+     *
+     * @return the queue
+     */
+    @RequestMapping(value = "/api/Mqadmin/qmgr/queue", method = RequestMethod.GET)
     public JSONObject get_queue () {//
 
         JSONObject list=new JSONObject();
