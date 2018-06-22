@@ -98,7 +98,7 @@ public class Mqadmin {
      * @return the qmgr
      */
     @RequestMapping(value = "/api/Mqadmin/qmgr", method = RequestMethod.GET)
-    public JSONObject get_qmgr () {//
+    public JSONObject getQmgr () {//
 
         JSONObject list=new JSONObject();
 
@@ -138,7 +138,7 @@ public class Mqadmin {
      * @return the listener
      */
     @RequestMapping(value = "/api/Mqadmin/qmgr/listener", method = RequestMethod.GET)
-    public JSONObject get_listener () {//
+    public JSONObject getListener () {//
 
         JSONObject list=new JSONObject();
 
@@ -178,7 +178,7 @@ public class Mqadmin {
      * @return the channel
      */
     @RequestMapping(value = "/api/Mqadmin/qmgr/channel", method = RequestMethod.GET)
-    public JSONObject get_channel () {//
+    public JSONObject getChannel () {//
 
         JSONObject list=new JSONObject();
 
@@ -218,7 +218,7 @@ public class Mqadmin {
      * @return the queue
      */
     @RequestMapping(value = "/api/Mqadmin/qmgr/queue", method = RequestMethod.GET)
-    public JSONObject get_queue () {//
+    public JSONObject getQueue () {//
 
         JSONObject list=new JSONObject();
 
