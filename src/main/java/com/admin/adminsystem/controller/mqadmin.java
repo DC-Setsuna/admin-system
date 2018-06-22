@@ -16,7 +16,7 @@ import java.util.List;
 
 
 @RestController
-public class mqadmin {
+public class Mqadmin {
 
     private static final String API = "https://106.38.159.103:20070";
 
